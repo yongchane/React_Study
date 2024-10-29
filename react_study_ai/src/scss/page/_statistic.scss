@@ -1,0 +1,230 @@
+.stc-container {
+  background-color: #d4eced;
+  width: 100%;
+  height: 100vh;
+  .stc-header-container {
+    padding-top: 40px;
+    @include stc_center();
+    height: 40px; /* 높이를 설정 */
+    text-align: center;
+    font-size: 14px;
+
+    .stc-header {
+      display: flex;
+      @include stc_header_w(0, 294px);
+      .stc-header-m {
+        color: white;
+        @include stc_header_m();
+      }
+      .stc-header-m-m {
+        @include stc_header_w();
+      }
+
+      .stc-header-w {
+        @include stc_header_w();
+      }
+      .stc-header-w-w {
+        @include stc_header_m();
+      }
+    }
+  }
+  .stc-main-container {
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .stc-main-water {
+      height: 350px;
+      align-self: stretch;
+      border-radius: 12px;
+      border: 1px solid var(--gray0, #d2d2d2);
+      background: var(--WhiteColor, #fff);
+      .sta-container {
+        .sta-main-water-title {
+          text-align: center;
+          padding-top: 11px;
+          padding-bottom: 11px;
+        }
+        .sta-line {
+          width: 100%;
+          height: 1px;
+          background: var(--gray0, #d2d2d2);
+        }
+      }
+      .sta-none {
+        margin-top: 27px;
+      }
+      .stc-main-water-sub-content {
+        padding-left: 11px;
+        padding-top: 14px;
+        .stc-main-water-sub-title {
+          @include stc_sub_title(12px, 500);
+        }
+        .stc-main-water-sub-ml {
+          @include stc_sub_title(22px, 600);
+        }
+        .stc-main-water-sub-comment {
+          @include stc_font(14px, 600);
+        }
+      }
+      .b {
+        width: 13.833px;
+        height: 83.897px;
+        flex-shrink: 0;
+        border-radius: 4px 4px 0px 0px;
+        background: var(--MainColor, #32dee7);
+      }
+    }
+    .stc-main-show-graph-container {
+      margin-top: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      width: 100%;
+      .stc-main-show-graph-ml-container {
+        width: 100%;
+        .stc-main-show-graph-ml {
+          display: flex;
+          padding-bottom: 22px;
+          .stc-ml {
+            @include stc_font(12px, 500);
+            width: 50px;
+          }
+          .stc-grahp-line {
+            margin-top: 10px;
+            width: 100%;
+            height: 1px;
+            background: var(--gray0, #d2d2d2);
+          }
+        }
+      }
+    }
+    .stc-main-show-graphs {
+      display: flex;
+      gap: 30px;
+      padding-left: 80px;
+      @include stc_font(13px, 500);
+      .stc-main-show-graph-time {
+        padding-right: 3px;
+        position: relative;
+        .vertical {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 80px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #32dee7);
+          z-index: 10px;
+        }
+        .verticall {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 50px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #32dee7);
+          z-index: 10px;
+        }
+        .cverticall {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 80px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #6a0000);
+          z-index: 10px;
+        }
+        .cvertical {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 50px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #6a0000);
+          z-index: 10px;
+        }
+      }
+    }
+    .stc-main-show-graph {
+      display: flex;
+      gap: 50px;
+      padding-left: 80px;
+      @include stc_font(13px, 500);
+      .stc-main-show-graph-time {
+        padding-right: 3px;
+        position: relative;
+        .vertical {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 80px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #32dee7);
+          z-index: 10px;
+        }
+        .verticall {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 50px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #32dee7);
+          z-index: 10px;
+        }
+      }
+    }
+    .stc-main-show-day {
+      display: flex;
+      gap: 30px;
+      padding-left: 80px;
+      @include stc_font(13px, 500);
+      .stc-main-show-days {
+        .verticall {
+          position: absolute;
+          bottom: calc(0px + 40px);
+          width: 14.861px;
+          height: 50px;
+          flex-shrink: 0;
+          border-radius: 4px 4px 0px 0px;
+          background: var(--MainColor, #32dee7);
+          z-index: 10px;
+        }
+      }
+    }
+    .stc-main-cafe {
+      margin-top: 50px;
+      display: flex;
+      padding: 30px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--gray0, #d2d2d2);
+      background: #fff;
+      .stc-main-cafe-title-container {
+        .stc-main-cafe-title {
+        }
+        .stc-main-cafe-mg {
+          @include stc_font(22px, 600);
+        }
+      }
+      .stc-main-cafe-content-container {
+        padding-top: 15px;
+        padding-left: 38px;
+        .stc-main-cafe-content {
+          @include stc_font(10px, 600);
+        }
+        .stc-main-cafe-sub-content {
+          @include stc_font(8px, 500);
+        }
+      }
+      .stc-show-icon {
+        padding-left: 12px;
+        padding-top: 15px;
+      }
+    }
+  }
+}

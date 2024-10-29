@@ -1,0 +1,108 @@
+.login1_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-top: 30px;
+
+  .login1_text1 {
+    color: var(--black, #121212);
+    text-align: center;
+    align-self: stretch;
+
+    font-family: Pretendard;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .login1_text2 {
+    color: var(--black, #121212);
+
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .login_gender {
+    display: inline-flex;
+    width: 60%;
+    height: 242px;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+
+    .gender {
+      display: flex;
+      width: 170px;
+      height: 240px;
+      padding: 58.603px 43.555px 49.197px 43.555px;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 32.947px;
+      border-radius: 5px;
+      background: var(--NeutralColor, #d4eced);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #32dee7; /* Change on hover */
+      }
+    }
+
+    .selected {
+      background-color: #32dee7; /* Keep this color for the selected gender */
+      color: #ffffff; /* Optional: Change text color for selected state */
+    }
+  }
+
+  .login1_progress {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    margin-top: auto;
+
+    img {
+      width: 42px;
+      height: 6px;
+    }
+  }
+
+  .login1_next_button {
+    display: flex;
+    padding: 18px 20px 36px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .next_button {
+      display: flex;
+      width: 350px;
+      height: 48px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      background: var(--gray-2, #bbb);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3c3c3c; // 마우스를 올렸을 때 버튼 배경 색
+      }
+    }
+  }
+}

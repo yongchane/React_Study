@@ -1,0 +1,13 @@
+.content-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.content-container::-webkit-scrollbar {
+  display: none;
+}

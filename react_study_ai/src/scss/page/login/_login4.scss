@@ -1,0 +1,86 @@
+.login4_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login4_text {
+    color: var(--black, #121212);
+    text-align: center;
+    margin-top: 120px;
+
+    /* sB22 */
+    font-family: Pretendard;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .weather_select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 40px;
+    .weather {
+      display: flex;
+      padding: 12px 24px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      background: var(--NeutralColor, #d4eced);
+      transition: background-color 0.3s ease;
+
+      // Add styles for selected weather
+      &.selected {
+        background-color: #32dee7; /* Keep this color for the selected weather */
+        color: #ffffff; /* Optional: Change text color for selected state */
+      }
+
+      &:hover {
+        background-color: #32dee7; /* Change on hover */
+      }
+    }
+  }
+
+  .login4_progress {
+    margin-top: 10px;
+  }
+
+  .login4_next_button {
+    display: flex;
+    padding: 18px 20px 36px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+
+    .login4_btn {
+      display: flex;
+      width: 100%;
+      height: 48px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      background: var(--gray-2, #bbb);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3c3c3c; // 마우스를 올렸을 때 버튼 배경 색
+      }
+    }
+  }
+}

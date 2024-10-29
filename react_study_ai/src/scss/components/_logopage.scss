@@ -1,0 +1,40 @@
+.logo_container {
+  background: var(--MainColor, #32dee7);
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  .logo {
+    width: 100%;
+    height: 42px;
+    margin-top: 200px;
+    color: var(--ThirdColor, #e9feff);
+    font-family: Pretendard;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .logo_background {
+    width: 100%;
+    margin-top: 400px;
+    .ship {
+      position: absolute;
+      top: 79%;
+      left: 65%;
+    }
+
+    .back_skyblue {
+      position: absolute;
+      top: 90%;
+    }
+    .back_white {
+      position: absolute;
+      top: 94%;
+    }
+  }
+}

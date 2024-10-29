@@ -1,0 +1,100 @@
+.login2_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; // 상단과 하단 간의 공간 자동 분배
+  padding-bottom: 20px; // 버튼과 프로그레스 바가 너무 붙지 않도록 여백 추가
+
+  .login2_text {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 100px; // 페이지 상단에 여백 추가
+
+    .login2_text1 {
+      color: var(--black, #121212);
+      text-align: center;
+      align-self: stretch;
+      font-family: Pretendard;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+
+    .login2_text2 {
+      color: var(--gray-3, #757575);
+      text-align: center;
+      font-family: Pretendard;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .input_weight {
+    color: var(--black, #121212);
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 100px;
+
+    input {
+      width: 20%;
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+  .login1_progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+
+    img {
+      width: 42px;
+      height: 6px;
+    }
+  }
+
+  .login2_next_button {
+    display: flex;
+    padding: 18px 20px 36px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    .next_button {
+      display: flex;
+      width: 100%;
+      height: 48px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      align-self: stretch;
+      border-radius: 8px;
+      background: var(--gray-2, #bbb);
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #3c3c3c;
+      }
+    }
+  }
+}

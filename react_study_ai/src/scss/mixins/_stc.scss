@@ -1,0 +1,47 @@
+@mixin stc_header_m() {
+  padding-top: 10px;
+  width: 147px;
+  height: 40px; /* 부모 높이를 적절하게 설정 */
+  gap: 10px;
+  border-radius: 8px; /* 상하좌우 모두 8px로 설정 */
+  background: var(--gray-10, #3c3c3c);
+}
+
+@mixin stc_header_w($t: 10px, $w: 147px) {
+  padding-top: $t;
+  width: $w;
+  height: 40px; /* 부모 높이를 적절하게 설정 */
+  gap: 10px;
+  border-radius: 8px; /* 상하좌우 모두 8px로 설정 */
+  background: rgba(187, 187, 187, 0.2);
+}
+
+@mixin stc_center() {
+  display: flex;
+  justify-content: center; /* 추가: 중앙 정렬 */
+  align-items: center; /* 추가: 세로 중앙 정렬 */
+  width: 100%;
+}
+
+@mixin stc_sub_title($s, $w) {
+  color: var(--black, #121212);
+  font-size: $s;
+  font-weight: $w;
+}
+
+// @mixin stc_vertical($h, $c: #32dee7) {
+//   //   margin-left: 3px;
+//   width: 14.861px;
+//   height: $h;
+//   flex-shrink: 0;
+//   border-radius: 4px 4px 0px 0px;
+//   background: var(--MainColor, $c);
+//   z-index: 10px;
+//   //   position: absolute;
+//   //   top: $t;
+// }
+
+@mixin stc_font($s, $w) {
+  font-size: $s;
+  font-weight: $w;
+}

@@ -1,0 +1,183 @@
+.main_container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  background: var(--ThirdColor, #e9feff);
+}
+
+.main_content {
+  width: 100%;
+  height: 370px;
+  display: flex;
+  padding: 72.057px 92px 20.5px 92px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 27.443px;
+  align-self: stretch;
+}
+
+.main_text {
+  display: flex;
+  width: 220px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.main_text1 {
+  color: var(--black, #121212);
+  text-align: center;
+  align-self: stretch;
+
+  /* sB16 */
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.main_text2 {
+  color: var(--black, #121212);
+  text-align: center;
+  align-self: stretch;
+
+  /* M12 */
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.main_aquarium {
+  width: 186px;
+  height: 186px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.aquarium_text {
+  display: flex;
+  width: 67px;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 60%;
+  right: 30%;
+}
+
+.aquarium_percent {
+  color: var(--WhiteColor, #757575);
+  text-align: center;
+
+  /* sB22 */
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.aquarium_liter {
+  color: var(--gray-1, #757575);
+  text-align: center;
+
+  /* M12 */
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.main_banner {
+  width: 100%;
+  display: flex;
+  padding: 0px 20px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.banner_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 160px;
+  gap: 12px;
+}
+.weather_banner_content_container {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  padding: 17px 24px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--MainColor, #32dee7);
+}
+
+.banner_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: stretch;
+  width: 190px;
+  justify-content: center;
+}
+.content_header {
+  align-self: stretch;
+  color: #fff;
+  /* M16 */
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.content_content {
+  align-self: stretch;
+  color: #fff;
+  /* sB12 */
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; /* 150% */
+}
+
+.banner_image {
+  display: flex;
+  width: 125px;
+  height: 95px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.caffeine_banner_content_container {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  padding: 17px 24px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--coffeColor, #310c0c);
+}

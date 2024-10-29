@@ -1,0 +1,62 @@
+{
+    "month": "2024년 6월",
+    "days": [
+        {
+            "day": 3,
+            "weekday": "월",
+            "events": [
+                {
+                    "title": "8시 기상",
+                    "time": "08:00",
+                    "success": true
+                },
+                {
+                    "title": "헬스장 가기",
+                    "time": "09:00",
+                    "success": true
+                },
+                {
+                    "title": "유산소 1시간 타기",
+                    "time": "10:00",
+                    "success": false
+                }
+            ]
+        },
+        {
+            "day": 4,
+            "weekday": "화",
+            "events": []
+        },
+        {
+            "day": 5,
+            "weekday": "수",
+            "events": [
+                {
+                    "title": "코딩하기",
+                    "time": "09:00",
+                    "success": false
+                }
+            ]
+        },
+        {
+            "day": 6,
+            "weekday": "목",
+            "events": []
+        },
+        {
+            "day": 7,
+            "weekday": "금",
+            "events": []
+        },
+        {
+            "day": 8,
+            "weekday": "토",
+            "events": []
+        },
+        {
+            "day": 9,
+            "weekday": "일",
+            "events": []
+        }
+    ]
+}

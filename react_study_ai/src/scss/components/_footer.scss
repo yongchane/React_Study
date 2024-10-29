@@ -1,0 +1,56 @@
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 2px solid #b4b4b4;
+
+  .footer-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 10px solid transparent;
+    font-size: 12px;
+
+    font-weight: 500;
+    .footer-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+      color: #bbbbbb;
+
+      &-left {
+        margin-left: 40px;
+      }
+
+      &-right {
+        margin-right: 40px;
+      }
+    }
+    .active {
+      color: #32dee7; /* 클릭 시 파란색으로 변경 */
+      font-weight: bold;
+    }
+  }
+
+  .footer-routine-view-container {
+    @include inline-flexbox(center, center);
+    .footer-routine-view-button {
+      margin-top: 20px;
+      width: 338px;
+      height: 48px;
+      padding: 10px;
+      @include inline-flexbox(center, center);
+      @include custom-font-size(600, 16px, white);
+      border-radius: 8px;
+      background: #3c3c3c;
+    }
+  }
+}

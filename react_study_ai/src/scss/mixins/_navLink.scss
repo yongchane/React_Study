@@ -1,0 +1,16 @@
+@mixin _nav-link() {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  @include custom-font-color(color-8);
+  flex-grow: 1;
+  text-align: center;
+  text-decoration: none;
+}
+
+@mixin _nav-link_under-line() {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
