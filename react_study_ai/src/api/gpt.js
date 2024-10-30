@@ -19,24 +19,24 @@ export const CallGpt = async ({ prompt }) => {
     {
       role: "user",
       content: `
-      1. [title]: nutritional supplement name
-      2. [ingredient]:Write down the ingredients of nutritional supplements
-      3. [taking]:Write down how to take nutritional supplements
-
-      Translate into Korean and Use the output in the following JSON format:
-
-      {
-       title: here is [title],
-       ingredient: here is [ingredient],
-       taking: here is [taking],
-      }
-
-      [events]: `,
-    },
-    {
-      role: "system",
-      content: `you are a pharmacist
-`,
+          Please recommend a nutritional supplement.
+          
+          Follow the instructions below:
+          
+          1. [title]: Provide the nutritional supplement name.
+          2. [ingredient]: List the key ingredients of the nutritional supplement.
+          3. [taking]: Describe how to take it.
+      
+          The output is translated into Korean and structure it in the following JSON format:
+          
+          {
+            "title": "[title]",
+            "ingredient": "[ingredient]",
+            "taking": "[taking]"
+          }
+      
+          User prompt: """${prompt}"""
+        `,
     },
   ];
 
@@ -49,7 +49,7 @@ export const CallGpt = async ({ prompt }) => {
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: "Say this is a test!" }],
+      messages,
       temperature: 0.7,
       max_tokens: 100,
     }),
