@@ -35,6 +35,7 @@ const Index = () => {
       <button onClick={handleClickGpt}>go gpt</button>
       <div>title:{data?.title}</div>
       <div>ingredient:{data?.ingredient}</div>
+      <div>effect:{data?.effect}</div>
       <div>taking:{data?.taking}</div>
     </>
   );
