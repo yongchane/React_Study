@@ -25,19 +25,10 @@ export const CallGpt = async ({ prompt }) => {
           Follow the instructions below:
           
           1. [title]: Provide the nutritional supplement name.
-          2. [ingredient]: List the key ingredients of the nutritional supplement.
-          3. [effect]: Effects of taking the nutritional supplement.
-          4. [taking]: Describe how to take it.
+          2. [content] : Briefly summarize the effects of taking the nutritional supplement.
       
           The output is translated into Korean and structure it in the following JSON format:
-          
-          {
-            "title": "[title]",
-            "ingredient": "[ingredient]",
-            "effect": "[effect]",
-            "taking": "[taking]"
-          }
-      
+          {"title": "[title]","content" : "[content]"}
           User prompt: """${prompt}"""
         `,
     },
