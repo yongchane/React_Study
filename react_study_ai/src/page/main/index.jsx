@@ -1,25 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { CallGpt } from "../../api/gpt";
-import { useState } from "react";
 import InputBox from "./InputBox";
 
 const fake = JSON.parse(
-  `{"title": "마그네슘", "ingredient": "마그네슘 (마그네슘 구리라우레이트, 마그네슘 옥사이드)", "taking": "매일 식사와 함께 1정을 물과 함께 복용하십시오."}`
+  `{"title": "약 이름", "ingredient": "약 소개", "effect": "약 효과" ,"taking": "약복용 방법"}`
 );
 
 const Index = () => {
-  const [data, setDate] = useState(fake);
+  const [data, setData] = useState(fake);
   const [loading, setLoading] = useState(false);
+  const [qs, setQs] = useState();
+
+  const sanitizeJsonString = (jsonString) => {
+    // JSON 문자열을 정제하는 함수
+    return jsonString
+      .replace(/```json|```/g, "") // 코드 블록 표시 제거
+      .replace(/\n/g, "") // 개행 문자 제거
+      .replace(/\s+/g, " ") // 연속된 공백을 하나의 공백으로 축소
+      .trim();
+  };
+
+  const validateAndParseJson = (jsonString) => {
+    // JSON 문자열의 유효성을 검사하고 파싱하는 함수
+    try {
+      let cleanedString = sanitizeJsonString(jsonString); // 변경: const를 let으로 선언
+
+      // JSON 문자열의 끝에 '}' 추가
+      if (!cleanedString.endsWith("}")) {
+        cleanedString += "}";
+      }
+
+      // 잘 정제된 JSON 문자열인지 확인 후 파싱
+      if (cleanedString.startsWith("{")) {
+        return JSON.parse(cleanedString);
+      } else {
+        console.error("유효하지 않은 JSON 형식:", cleanedString);
+        return null;
+      }
+    } catch (error) {
+      console.error("입력 메시지를 JSON으로 파싱하는 중 오류 발생:", error);
+      return null;
+    }
+  };
 
   const handleClickGpt = async (userInput) => {
     try {
       setLoading(true);
+      setQs(userInput);
       const message = await CallGpt({
         prompt: `${userInput}`,
       });
-      // JSON 형태의 문자열로 출력이 되기 때문에 js 객체로 변환하는 함수
-      setDate(JSON.parse(message));
+
+      // 메시지 정제 및 JSON으로 변환
+      const parsedData = validateAndParseJson(message);
+
+      if (parsedData) {
+        // parsedData가 유효한 경우 상태 업데이트
+        setData(parsedData);
+      } else {
+        // parsedData가 유효하지 않은 경우 기본 데이터 유지
+        console.warn("유효하지 않은 데이터로 인해 상태를 업데이트하지 않음.");
+      }
+
+      console.log("inputdata", userInput, "message", message);
     } catch (error) {
+      console.error("API 호출 중 오류 발생:", error);
     } finally {
       setLoading(false);
     }
@@ -29,14 +74,15 @@ const Index = () => {
     console.log(userInput);
     handleClickGpt(userInput);
   };
+
   return (
     <>
-      <InputBox onSubmit={handleSubmit} />
-      <button onClick={handleClickGpt}>go gpt</button>
-      <div>title:{data?.title}</div>
-      <div>ingredient:{data?.ingredient}</div>
-      <div>effect:{data?.effect}</div>
-      <div>taking:{data?.taking}</div>
+      <InputBox onClick={handleClickGpt} />
+      <div>내 질문: {qs}</div>
+      <div>title: {data?.title}</div>
+      <div>ingredient: {data?.ingredient}</div>
+      <div>effect: {data?.effect}</div>
+      <div>taking: {data?.taking}</div>
     </>
   );
 };

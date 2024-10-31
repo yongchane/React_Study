@@ -20,7 +20,8 @@ export const CallGpt = async ({ prompt }) => {
       role: "user",
       content: `
           Please recommend a nutritional supplement.
-          
+          Please provide the response in Korean.
+
           Follow the instructions below:
           
           1. [title]: Provide the nutritional supplement name.

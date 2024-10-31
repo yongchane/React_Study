@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const InputBox = ({ onSubmit }) => {
+const InputBox = ({ onClick }) => {
   //사용자의 입력을 받아, 상위컴포넌트로 데이터 전달
   const [userInput, setUserInput] = useState("");
 
@@ -10,7 +10,8 @@ const InputBox = ({ onSubmit }) => {
   };
 
   const handleClick = () => {
-    onSubmit(userInput);
+    onClick(userInput);
+    setUserInput("");
   };
   return (
     <div className="inputbox-container">
