@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { CallGpt } from "../../api/gpt";
 import InputBox from "./InputBox";
 
-const fake = JSON.parse(
-  `{"title": "약 이름", "ingredient": "약 소개", "effect": "약 효과" ,"taking": "약복용 방법"}`
-);
+const fake = JSON.parse(`{"title": "약 이름", "content":"영양제 내용"}`);
 
 const Index = () => {
   const [data, setData] = useState(fake);

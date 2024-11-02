@@ -28,7 +28,11 @@ export const CallGpt = async ({ prompt }) => {
           2. [content] : Briefly summarize the effects of taking the nutritional supplement.
       
           The output is translated into Korean and structure it in the following JSON format:
-          {"title": "[title]","content" : "[content]"}
+          
+          {
+          "title": "[title]",
+          "content" : "[content]"
+          }
           User prompt: """${prompt}"""
         `,
     },
