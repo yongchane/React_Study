@@ -34,7 +34,7 @@ const Index = () => {
     <>
       <InputBox onClick={handleClickGpt} />
       <div>내 질문: {qs}</div>
-      <div>title: {data?.title}</div>
+      <div>약이름: {data?.title}</div>
       <div>content: {data?.content}</div>
       {/* <div>ingredient: {data?.ingredient}</div>
       <div>effect: {data?.effect}</div>
