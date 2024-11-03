@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./store"; //index.js에서 정의한 store 즉 저장소
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
