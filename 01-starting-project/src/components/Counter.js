@@ -12,6 +12,7 @@ const Counter = () => {
   // useSelector안에 redux가 실행할 함수 넣어주기 그리고 해당 함수는 redux가 실행할거고 우리가 저장소에서 추출하려는 데이터 부분을 결정
   // 리덕스 내의 state
   // 리덕스 내부의 state 가 변경될때마다 해당 값을 컴포넌트가 가지게 된다. 즉 리덕스 내부 state가 변경되면 해당 컴포넌트는 재렌더링 됨
+  const show = useSelector((state) => state.showCounter);
 
   const incrementHandlre = () => {
     dispatch({ type: "increment" });
@@ -20,14 +21,21 @@ const Counter = () => {
     dispatch({ type: "decrement" });
   };
 
-  const toggleCounterHandler = () => {};
+  const increaseHandlre = () => {
+    dispatch({ type: "increase", amount: 5 }); //amount같은 파라미터 값은 맘대로 설정가능
+  };
+
+  const toggleCounterHandler = () => {
+    dispatch({ type: "toggle" });
+  };
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandlre}>increment</button>
+        <button onClick={increaseHandlre}>increase by 5</button>
         <button onClick={decrementHandlre}>decrement</button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
