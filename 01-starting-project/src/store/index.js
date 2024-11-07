@@ -30,7 +30,7 @@ const counterSlice = createSlice({
     },
     increase(state, action) {
       //action에 붙어있는 데이터가 필요하면 action을 매개변수로 받아서 리듀서 함수 및 메서드에서 사용할 수 있다
-      state.counter = state.counter + action.amount;
+      state.counter = state.counter + action.payload;
     },
     toggleCounter(state) {
       state.showCounter = !state.showCounter;
@@ -82,6 +82,9 @@ const connectReducer = (state = initialState, action) => {
 // 여러개의 리듀서를 하나로 합칠때 configureStore을 import해서 사용하기
 //configureStore는 createStore 처러 storedmf 만듬
 
+//액션 식별자 받는법 위에서 선언한 key(increment,decrement와같은)값들이 있음
+//counterSlice.actions.toggleCounter // 해당 매서드가 호출되면 액션 객체가 생성
+
 const store = configureStore({
   // 전역 상태를 담당하는 주요 리듀서로 사용하는 방법
   // 1. reducer: counterSlice.reducer -> 주로 리듀서가 하나있을때 주요 리듀서로 할당하게함
@@ -92,4 +95,6 @@ const store = configureStore({
 });
 // configureStore에서 요구되는 설정 객체에서 리듀서 프로퍼티를 정함
 
+//액션 개체 내보내기
+export const counterActions = counterSlice.actions;
 export default store;

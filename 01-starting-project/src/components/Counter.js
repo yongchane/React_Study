@@ -1,4 +1,8 @@
 import classes from "./Counter.module.css";
+
+// 리덕스 툴킷으로 생성한 액션 받기
+import { counterActions } from "../store";
+
 import { useSelector, useDispatch } from "react-redux";
 //redux에서 사용하는 커스텀 훅, useStore 훅을 통해서도 저장소에 직접 액세스 할 수 있다
 //useSelector 사용하는 이유: 저장소가 관리하는 상태 부분을 우리가 자동으로 선택할 수 있다
@@ -15,18 +19,23 @@ const Counter = () => {
   const show = useSelector((state) => state.showCounter);
 
   const incrementHandlre = () => {
-    dispatch({ type: "increment" });
+    dispatch({ type: counterActions.increment() });
+    // 1. 리덕스를 이용할떄: dispatch({ type: "increment" });
+    // 2. 리덕스툴킷을 이용할떄: dispatch({ type: counterActions.increment() });
   };
   const decrementHandlre = () => {
-    dispatch({ type: "decrement" });
+    dispatch({ type: counterActions.decrement() });
   };
 
   const increaseHandlre = () => {
-    dispatch({ type: "increase", amount: 5 }); //amount같은 파라미터 값은 맘대로 설정가능
+    // dispatch({ type: "increase", amount: 5 }); //amount같은 파라미터 값은 맘대로 설정가능
+    dispatch(counterActions.increase(10));
+    //안에 10은 payload로 increase에 넘겨주는 값
+    //리덕스 툴킷은 기본으로 {type: SOME_UNIQUE_INDENTIFIER,payload:10} 으로 받음
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "toggle" });
+    dispatch({ type: counterActions.toggleCounter() });
   };
 
   return (
