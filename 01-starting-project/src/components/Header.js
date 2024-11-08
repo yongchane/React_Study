@@ -1,7 +1,7 @@
 import classes from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { authActions } from "../store";
+import { authActions } from "../store/auth";
 
 const Header = () => {
   //useSelector을 통해 리듀서에 있는 상태 받아오기

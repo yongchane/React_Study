@@ -1,7 +1,7 @@
 import classes from "./Counter.module.css";
 
 // 리덕스 툴킷으로 생성한 액션 받기
-import { counterActions } from "../store";
+import { counterActions } from "../store/counter";
 
 import { useSelector, useDispatch } from "react-redux";
 //redux에서 사용하는 커스텀 훅, useStore 훅을 통해서도 저장소에 직접 액세스 할 수 있다
