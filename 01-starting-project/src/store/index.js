@@ -2,9 +2,25 @@
 import { createStore } from "redux";
 
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-import store from "../../../react_study_ai/src/Redux/store";
 
-const initialState = { counter: 0, showCounter: true };
+const initialAuthState = {
+  isAuthenticated: false,
+};
+
+const authSlice = createSlice({
+  name: "authetication",
+  initialState: initialAuthState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
+  },
+});
+
+const initialCounterState = { counter: 0, showCounter: true };
 
 // redux-toolkit 사용법
 
@@ -13,7 +29,7 @@ const initialState = { counter: 0, showCounter: true };
 // 모든 slice에는 이름이 있어야함 즉 상태마다 식별자가 필요
 const counterSlice = createSlice({
   name: "counter",
-  initialState: initialState, // 초기 상태를 initialState를 통해 선언해야함
+  initialState: initialCounterState, // 초기 상태를 initialState를 통해 선언해야함
   //리듀서 설정하기
   reducers: {
     //리듀서 안 매서드의 이름들은 마음대로 지어도 됌
@@ -40,7 +56,7 @@ const counterSlice = createSlice({
 
 // redux 사용법
 
-const connectReducer = (state = initialState, action) => {
+const connectReducer = (state = initialCounterState, action) => {
   if (action.type === "increment") {
     return {
       counter: state.counter + 1,
@@ -91,10 +107,12 @@ const store = configureStore({
   // 2. reducer: { counter(원하는 대로 속성 이름 정하기):counterSlice.reducer, 원하는 키값:리듀서.reducer }
   //-> 리듀서들을 map 처럼 묶어서 하나의 리듀서로 만드는 작업
 
-  reducer: counterSlice.reducer,
+  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
 });
 // configureStore에서 요구되는 설정 객체에서 리듀서 프로퍼티를 정함
 
 //액션 개체 내보내기
 export const counterActions = counterSlice.actions;
+export const authActions = authSlice.actions;
+
 export default store;

@@ -12,11 +12,11 @@ import { useSelector, useDispatch } from "react-redux";
 const Counter = () => {
   const dispatch = useDispatch(); // 리덕스 저장소에 대한 action을 보냄
 
-  const counter = useSelector((state) => state.counter); // 저장소에서 데이터를 받음
+  const counter = useSelector((state) => state.counter.counter); // 저장소에서 데이터를 받음
   // useSelector안에 redux가 실행할 함수 넣어주기 그리고 해당 함수는 redux가 실행할거고 우리가 저장소에서 추출하려는 데이터 부분을 결정
   // 리덕스 내의 state
   // 리덕스 내부의 state 가 변경될때마다 해당 값을 컴포넌트가 가지게 된다. 즉 리덕스 내부 state가 변경되면 해당 컴포넌트는 재렌더링 됨
-  const show = useSelector((state) => state.showCounter);
+  const show = useSelector((state) => state.counter.showCounter);
 
   const incrementHandlre = () => {
     dispatch({ type: counterActions.increment() });
